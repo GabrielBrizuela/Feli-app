@@ -1,0 +1,36 @@
+import React from 'react';
+import ItemCount from './ItemCount';
+import { useState } from "react";
+import { Link } from 'react-router-dom';
+
+const ItemDetail = ({ items }) => {
+    const [goToCart, setGoToCart] = useState(false)
+
+    const onAdd = (cantidad) => {
+        setGoToCart(true);
+    }
+
+    return (
+        
+            <div className="container">
+                <div className="detail">
+                    <img src={items.image} alt={items.nombre} />
+                    <div className="infoDetail">
+                        <h3>{items.nombre}</h3>
+                        <p>
+                            {items.descripcion}
+                        </p>
+                        <h3>${items.precio}.-</h3>
+                        {
+                            goToCart
+                                ? <Link to='/cart'>Terminar compra</Link>
+                                : <ItemCount stock={10} initial={1} onAdd={onAdd} />
+                        }
+                    </div>
+                </div>
+            </div>
+            
+    );
+};
+
+export default ItemDetail;
