@@ -12,13 +12,17 @@ const ItemDetailContainer = () => {
         const getItems = () =>
             new Promise((resolve) => {
                setTimeout(() => {
-                    resolve(productos);
+                    resolve(productos.find(productos=> productos.id=== parseInt(detalleId))|| []);
                 }, 500);
-   
+ 
+            } );
+              getItems ().then((resolve)=> {
+                setItems(resolve);
+                
             });
-       getItems.then(resolve => setItems(resolve.find(productos =>productos.id === (detalleId))));
        
-    }, [])
+       
+    }, [detalleId])
 
     return (
         <div style={{ minHeight: '70vh' }}>

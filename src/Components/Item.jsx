@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 
-const Item = ({nombre, image, precio}) => {
-     return (<Link to={`/item/${Item.id}`}>
+const Item = ({nombre, image, precio,id}) => {
+     return (<Link to={`/item/${id}`}>
         <div className="card">
             <img src={image} className="card-img-top" alt={nombre} />
             <div className="card-body">

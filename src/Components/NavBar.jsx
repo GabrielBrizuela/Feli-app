@@ -22,7 +22,7 @@ const NavBar = () => (
             <li className="nav-item">
                 <NavLink className="nav-link link_header" to='/category/sifon'>Sifones</NavLink>
             </li>
-            <NavLink button type="button" className="btn btn-outline-secondary" to='/cart'>
+            <NavLink  className="btn btn-outline-secondary" to='/cart'>
              <CartWidget />   
             </NavLink>
                        

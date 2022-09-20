@@ -24,6 +24,8 @@ const ItemCount = ({ stock, initial, onAdd }) => {
             setItemAdd(itemAdd + cantidad);
         }
 
+        onAdd (cantidad)
+
     }
 
     useEffect (()=> {
